@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+	<meta charset="UTF-8" />
+	<title>My first app with AngularJS</title>
+</head>
+<body>
+	<div ng-controller="MyController">
+		<label for="name">Search</label>
+		<input type="text" id="name" ng-model="name" placeholder="Search a guest" autocomplete="off"/>
+
+		<h2>Guests:</h2>
+		<ol>
+			<li ng-repeat="person in guests | filter:name | orderBy:'priority':'reverse'">{{ person.name }}</li>
+		</ol>	
+	</div>
+	<!-- Loading angular -->
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
